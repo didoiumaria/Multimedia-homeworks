@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Canvas Chart</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="theme-light">
+    <div class="page-wrapper">
+        <h1>Dynamic Canvas Chart</h1>
+        <div id="controls">
+            <div class="control-group">
+                <button id="startBtn">Start</button>
+                <button id="pauseBtn">Pause</button>
+                <button id="resetBtn">Reset</button>
+                <button id="exportBtn">Download PNG</button>
+            </div>
+
+            <div class="control-group">
+                <label>
+                    Speed (ms):
+                    <input type="range" id="speedSlider" min="100" max="2000" step="100" value="1000" />
+                    <span id="speedValue">1000</span>
+                </label>
+            </div>
+
+            <div class="control-group">
+                <label>
+                    Min value:
+                    <input type="number" id="minValueInput" value="0" />
+                </label>
+                <label>
+                    Max value:
+                    <input type="number" id="maxValueInput" value="600" />
+                </label>
+            </div>
+
+            <div class="control-group">
+                <label>
+                    <input type="checkbox" id="gridToggle" checked />
+                    Show grid
+                </label>
+                <label>
+                    <input type="checkbox" id="smoothToggle" />
+                    Smooth lines
+                </label>
+            </div>
+
+            <div class="control-group">
+                <label>
+                    Chart type:
+                    <select id="chartTypeSelect">
+                        <option value="line">Line</option>
+                        <option value="bar">Bar</option>
+                        <option value="area">Area</option>
+                        <option value="scatter">Scatter</option>
+                    </select>
+                </label>
+                <label>
+                    Theme:
+                    <select id="themeSelect">
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                        <option value="contrast">High Contrast</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+
+        
+        <div id="chartLayout">
+            <div class="canvas-wrapper">
+                <canvas id="chartCanvas" width="900" height="600"></canvas>
+                <div id="tooltip"></div>
+            </div>
+
+            <div id="statsPanel">
+                <h2>Statistics (Series A)</h2>
+                <p>Current value: <span id="statCurrent">-</span></p>
+                <p>Minimum: <span id="statMin">-</span></p>
+                <p>Maximum: <span id="statMax">-</span></p>
+                <p>Average: <span id="statAvg">-</span></p>
+                <p>Trend: <span id="statTrend">-</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="chart.js"></script>
+</body>
+
+</html>

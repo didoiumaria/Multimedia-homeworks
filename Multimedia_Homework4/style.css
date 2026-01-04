@@ -1,0 +1,137 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.page-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+button {
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 1px solid #666;
+    background: #eee;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ddd;
+}
+
+select,
+input[type="number"],
+input[type="range"] {
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid #666;
+}
+
+
+
+#chartLayout {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.canvas-wrapper {
+    position: relative;
+}
+
+#chartCanvas {
+    border: 1px solid #333;
+    display: block;
+}
+
+
+
+#statsPanel {
+    min-width: 220px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #aaa;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+
+#tooltip {
+    position: absolute;
+    pointer-events: none;
+    padding: 4px 8px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 4px;
+    font-size: 12px;
+    display: none;
+    transform: translate(-50%, -120%);
+    white-space: nowrap;
+}
+
+
+
+body.theme-light {
+    background: #f5f5f5;
+    color: #222;
+}
+
+body.theme-dark {
+    background: #1e1e1e;
+    color: #eee;
+}
+
+body.theme-contrast {
+    background: #000;
+    color: #ff0;
+}
+
+body.theme-dark #statsPanel {
+    background: rgba(0, 0, 0, 0.6);
+    border-color: #555;
+    color: #fff;
+}
+
+body.theme-contrast #statsPanel {
+    background: #000;
+    border-color: #ff0;
+    color: #ff0;
+}
+
+@media (max-width: 900px) {
+    #chartLayout {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #statsPanel {
+        width: 100%;
+    }
+}
